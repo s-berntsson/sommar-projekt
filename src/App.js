@@ -1,7 +1,12 @@
+import Header from "./components/Header";
+import MyRouter from "./components/MyRouter";
+
+
 function App() {
   return (
     <div className="App">
-      <h1>PopShop</h1>
+      <Header/>
+      <MyRouter/>
     </div>
   );
 }
