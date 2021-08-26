@@ -5,7 +5,8 @@ function ProductCard() {
         <div>
             <p>This is a product card</p>
             <Link to='/product'>go to product page</Link>
-            {/* Skapa produktkort med länk till respektive produktsida */}
+            {/* Mall för produktkort med props */}
+            <h1>(+)</h1>
         </div>
     )
 }

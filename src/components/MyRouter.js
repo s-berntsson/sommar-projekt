@@ -8,7 +8,7 @@ function MyRouter() {
         <div>
             <Switch>
                 <Route exact path='/' component={ProductGallery} />
-                {/* Skapa paths för alla produktnamn */}
+                {/* Skapa paths för alla produktnamn --- Går detta att automatisera vid klick på produktkort? */}
                 <Route exact path='/product' component={ProductPage} />
                 <Route exact path='/checkout' component={Checkout} />
             </Switch>
