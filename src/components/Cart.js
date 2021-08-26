@@ -4,35 +4,25 @@ import * as cartActions from '../redux/actions/cartActions';
 
 class Cart extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {  //state is used here to save the event target of handleChange, so that we can use it in handleSubmit
-            item: {
-                title: ""
-            }
-        }; 
-    }
-
-
-    handleClick = (event) => {
-        this.props.dispatch(cartActions.addProduct(event.target.value));
+    handleClick = async (event) => {
+        await this.props.dispatch(cartActions.addProduct(event.target.value));
         console.log(this.props.contents);
     }
 
     render() {
         return (
             <div>
-                
+
                 <p>kundvagnen</p>
 
-                <button type='button' onClick={this.handleClick} value='product title'>add product</button>
+                <button type='button' onClick={this.handleClick} value='popcorn'>add product</button>
 
             </div>
         )
-    }}
+    }
+}
 
-    function mapStateToProps(state) {
+function mapStateToProps(state) {
     return {
         cart: state.cart,
         contents: state.cart.contents,

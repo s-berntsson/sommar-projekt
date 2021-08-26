@@ -1,19 +1,29 @@
 const cartState = {
-    contents: ['hej', 'hejhej'],
+    contents: [],
     total: 0
 }
 
-export default function cartReducer(state = cartState, action) {  
-    switch(action.type) {
-        case "ADD_PRODUCT":
-            return [{...state.contents}, ...action.product ];
+export default function cartReducer(state = cartState, action) {
+    switch (action.type) {
+        case "ADD_PRODUCT": {
+            console.log(action.product)
+            console.log(state.total)
+            return {
+                ...state,
+                contents: [
+                    ...state.contents,
+                    (action.product)
+                ]
+            }
+        }
         default:
-            return state;
+            return state
     }
 }
 
 
-/* 
+
+/*
 
 STATE
 
