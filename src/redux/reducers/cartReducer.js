@@ -17,7 +17,7 @@ export default function cartReducer(state = cartState, action) {
             }
         }
         case "ADD_COST": {
-            const cost = parseInt(action.cost)  //Vet inte var i koden den slutade vara ett nummer, haha
+            const cost = parseInt(action.cost)  //Vet inte var i koden den slutade vara ett nummer, men var tvungen till detta
 
             return {
                 ...state,

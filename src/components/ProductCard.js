@@ -20,10 +20,15 @@ function ProductCard(props) {
     return (
         <div>
             <img src={`products/${props.img}`} width='200px' alt={`Bild på ${props.name}-popcorn.`} />
+
             <Link to={props.name}>{props.name}</Link>
+
             <p>{props.price} kr/hg</p>
-            <aside>INFO-BUTTON</aside>
+
+            <aside>INFO-BUTTON</aside> {/* Ska visa/gömma nedanstående element */}
+
             {renderListItems(props.characteristics)}
+
             <AddToCart name={props.name} price={props.price}/>
         </div>
     )

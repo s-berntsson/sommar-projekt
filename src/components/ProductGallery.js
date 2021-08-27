@@ -18,13 +18,14 @@ class ProductGallery extends React.Component {
 
                 <h2>Sortiment</h2>
 
-                <select name='Sortera'>
+                <select name='Sortera'> {/* Ur funktion */}
                     <option value={0}>Sortera</option>
                     <option value={1}>Pris: Stigande</option>
                     <option value={2}>Pris: Fallande</option>
                 </select>
                 
-                {this.props.productData.map(this.renderCard)}
+                { //För varje produkt-objekt, rendera ett produktkort med resp. data
+                this.props.productData.map(this.renderCard)}
 
             </div>
         )

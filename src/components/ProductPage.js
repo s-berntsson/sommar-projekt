@@ -29,16 +29,29 @@ function ProductPage(props) {
 
     return (
         <div>
+            {/* Bildsektion med lite info */}
             <section>
+
                 <img src={`products/${props.img}`} height='500px' alt={`Bild på ${props.name}-popcorn`}></img>
-                {renderCharacteristics(props.characteristics)}
+
+                { // Lista med egenskaper att visa bredvid bilden
+                renderCharacteristics(props.characteristics)}
+
             </section>
+            
             <h2>{props.name}</h2>
+
             <aside>{'Artikelnr: ' + props.serialNum}</aside>
+
             <p>{props.desc}</p>
+
+            {/* Pris */}
             <h4 className='large-price'>149</h4>
             <h2>kr/hg</h2>
+
+            {/* Add-to-cart-knapp */}
             <AddToCart name={props.name} price={props.price}/>
+
         </div>
     )
 }

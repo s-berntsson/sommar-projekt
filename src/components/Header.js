@@ -8,7 +8,7 @@ function Header() {
             <Link to='/'>HOME</Link>
             <h2>cart</h2>
             <Cart/>
-            {/* Funktion som visar/gömmer shopping cart */}
+            {/* Visa/göm shopping cart */}
         </div>
     )
 }

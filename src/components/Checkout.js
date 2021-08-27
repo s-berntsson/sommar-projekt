@@ -1,3 +1,5 @@
+//Hann inte ens börja hahahaha
+
 function Checkout() {
     return(
         <div>

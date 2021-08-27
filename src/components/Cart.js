@@ -3,13 +3,6 @@ import { connect } from 'react-redux';
 import * as cartActions from '../redux/actions/cartActions'; //need later for adding "remove product"-action
 import CartCard from './CartCard';
 
-/*
-
-för varje objekt i productData, gå igenom vagnen och jämför
-- om objektets namn finns i vagnen, lägg till på listan
-
-*/
-
 
 class Cart extends React.Component {
 
@@ -27,9 +20,12 @@ class Cart extends React.Component {
                 <p>kundvagnen</p>
 
                 {
+                /* för varje objekt i productData, gå igenom vagnen och jämför
+                    1. om objektets namn finns i vagnen, lägg till på listan 
+                    2. rendera produktkort utefter nya listan */
                 this.props.productData.filter(
-                    object => this.props.contents.includes(object.name))
-                    .map(this.renderCartCard)
+                    object => this.props.contents.includes(object.name)) //1
+                    .map(this.renderCartCard) //2
                 }
 
                 <section>
@@ -44,7 +40,7 @@ class Cart extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        cart: state.cart,
+        cart: state.cart, //Ta bort? Används inte...
         contents: state.cart.contents,
         total: state.cart.total,
         productData: state.productData
