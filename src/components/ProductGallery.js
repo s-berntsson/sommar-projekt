@@ -16,8 +16,14 @@ class ProductGallery extends React.Component {
         return (
             <div>
 
-                <h3>this is the product gallery</h3>
+                <h2>Sortiment</h2>
 
+                <select name='Sortera'>
+                    <option value={0}>Sortera</option>
+                    <option value={1}>Pris: Stigande</option>
+                    <option value={2}>Pris: Fallande</option>
+                </select>
+                
                 {this.props.productData.map(this.renderCard)}
 
             </div>

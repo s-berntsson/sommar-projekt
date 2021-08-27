@@ -6,14 +6,22 @@ const cartState = {
 export default function cartReducer(state = cartState, action) {
     switch (action.type) {
         case "ADD_PRODUCT": {
-            console.log(action.product)
-            console.log(state.total)
             return {
                 ...state,
                 contents: [
                     ...state.contents,
                     (action.product)
                 ]
+
+            }
+        }
+        case "ADD_COST": {
+
+            const cost = parseInt(action.cost)
+
+            return {
+                ...state,
+                total: state.total + cost 
             }
         }
         default:
