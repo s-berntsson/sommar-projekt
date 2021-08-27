@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import AddToCart from "./AddToCart";
 
 
 function ProductCard(props) {
@@ -23,7 +24,7 @@ function ProductCard(props) {
             <p>{props.price} kr/hg</p>
             <aside>INFO-BUTTON</aside>
             {renderListItems(props.characteristics)}
-            <aside>Add to cart</aside>
+            <AddToCart name={props.name} price={props.price}/>
         </div>
     )
 }
