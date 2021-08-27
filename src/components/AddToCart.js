@@ -3,34 +3,27 @@ import * as cartActions from '../redux/actions/cartActions';
 import { connect } from 'react-redux';
 
 class AddToCart extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
-    handleClick = async (event) => {
-        await this.props.dispatch(cartActions.addProduct(event.target.name));
-        await this.props.dispatch(cartActions.addCost(event.target.value));
-        console.log(event.target.cost);
-        console.log(this.props.contents);
-        console.log(this.props.total);
+    handleClick = () => {
+
+        //När "add to cart"-klickas ska kundvagnens innehåll samt totalpriset uppdateras
+        this.props.dispatch(cartActions.addProduct(this.props.name));
+        this.props.dispatch(cartActions.addCost(this.props.price));
     }
 
     render() {
-        return(
-            <button onClick={this.handleClick} name={this.props.name} value={this.props.price}>Add to cart</button>
+        return (
+            <button onClick={this.handleClick}>Add to cart</button>
         )
     }
 
 }
 
 
-
-function mapStateToProps(state, ownProps) {
+//Kopplad till store så att dispatch kan ske, trots att state ej används
+function mapStateToProps(state, ownProps) {  
     return {
-        cart: state.cart,
-        contents: state.cart.contents,
-        total: state.cart.total,
-        value: ownProps.value,
+        name: ownProps.name,
         price: ownProps.price
     };
 }

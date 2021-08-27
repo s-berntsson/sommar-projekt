@@ -1,10 +1,11 @@
-const cartState = {
-    contents: [],
-    total: 0
+const cartState = { //Initiella state
+    contents: [],  //Tom kundvagn
+    total: 0   //Totalpriset är 0
 }
 
 export default function cartReducer(state = cartState, action) {
     switch (action.type) {
+
         case "ADD_PRODUCT": {
             return {
                 ...state,
@@ -16,8 +17,7 @@ export default function cartReducer(state = cartState, action) {
             }
         }
         case "ADD_COST": {
-
-            const cost = parseInt(action.cost)
+            const cost = parseInt(action.cost)  //Vet inte var i koden den slutade vara ett nummer, haha
 
             return {
                 ...state,

@@ -15,7 +15,8 @@ class Cart extends React.Component {
 
     renderCartCard = (product) => {
         return (
-        <CartCard key={product.SerialNumber} name={product.name} img={product.img}/>
+        <CartCard key={product.SerialNumber} serialNum={product.SerialNumber} 
+        name={product.name} img={product.img} price={product.pricePerHekto} />
         )
     }
 
