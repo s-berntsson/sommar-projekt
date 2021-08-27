@@ -1,21 +1,35 @@
 import ProductCard from "./ProductCard";
+import { connect } from 'react-redux';
+import React from "react";
 
 
-function ProductGallery() {
-    return(
-        <div>
-            <h3>this is the product gallery</h3>
-            <ProductCard/>
-            {/* 
 
-            - Rendera ut alla produktkort med länk till produktsidan
-            - Onclick körs funktion som renderar sidan för den specifika produkten
-            - Går det att koppla renderingen av produktsidan så att den anpassar sig efter path?
-                - En lösning kan vara att skapa path:sen i routern i samma funktion?
+class ProductGallery extends React.Component {
 
-             */}
-        </div>
-    )
+    renderCard = (product) => {
+        return (
+            <ProductCard key={product.SerialNumber} name={product.name} price={product.pricePerHekto}
+                img={product.img} characteristics={product.characteristics} />
+        )
+    }
+    render() {
+        return (
+            <div>
+
+                <h3>this is the product gallery</h3>
+
+                {this.props.productData.map(this.renderCard)}
+
+            </div>
+        )
+    }
 }
 
-export default ProductGallery;
+function mapStateToProps(state) {
+    return {
+        productData: state.productData
+    };
+}
+
+
+export default connect(mapStateToProps)(ProductGallery);
